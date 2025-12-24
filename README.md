@@ -39,7 +39,7 @@ During EDA, the following insights were identified:
 📌 *Correlation analysis, statistical tests, and distribution plots were used to support these findings.*
 
 
-![alt text](image.png)
+![alt text](img/correlation.png)
 
 ---
 
@@ -75,7 +75,7 @@ The final model is based on **LightGBM**, trained using a pipeline with:
 - Strong performance on the majority class (loan repaid)
 - Slightly lower recall on defaults due to class imbalance
 
-![alt text](image-1.png)
+![alt text](img/model.png)
 
 ---
 
@@ -89,7 +89,7 @@ Key findings:
 - High debt ratios significantly reduce repayment probability.
 - Results are consistent with correlation analysis and statistical testing.
 
-![alt text](image-2.png)
+![alt text](img/shap.png)
 
 ---
 
