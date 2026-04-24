@@ -14,6 +14,11 @@ Build a machine learning model that predicts **loan repayment probability** (`lo
 
 This is a **binary classification** task evaluated using the **ROC-AUC** metric.
 
+In addition to **ROC-AUC**, special attention is given to **Recall** and the **Kolmogorov–Smirnov** (KS) statistic, as they are critical in credit risk modeling:
+
+- Recall is used to measure how effectively the model identifies high-risk borrowers (defaults), which is essential to minimize financial loss from undetected bad loans.
+- Kolmogorov–Smirnov (KS) statistic is used to evaluate the model’s ability to separate good and bad borrowers across the full score distribution, providing a standard measure of discriminatory power in credit scoring systems.
+
 ---
 
 ## 📊 Dataset Overview
@@ -71,9 +76,15 @@ The final model is based on **LightGBM**, trained using a pipeline with:
 **ROC-AUC = 0.9221**
 
 **Validation Metrics:**
-- Accuracy: **0.87**
+- **Accuracy: 0.87**
 - Strong performance on the majority class (loan repaid)
 - Slightly lower recall on defaults due to class imbalance
+- **Recall (Default class): 0.8925**
+- **Kolmogorov–Smirnov Statistic (KS): 0.682**
+
+> Model successfully identifies a large proportion of high-risk borrowers, significantly reducing undetected defaults.
+
+> Indicates strong separation between good and bad borrowers. This level of KS is typically considered excellent in credit scoring applications, reflecting strong ranking ability of the model.
 
 ![alt text](img/model.png)
 
